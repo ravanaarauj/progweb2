@@ -18,13 +18,13 @@
     <title>Lista de tarefas</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="lista">
       <div class="row">
         <div class="col-5">
           <h1>Cadastro de tarefas</h1>
           <form class="form-inline" onsubmit="return false">
-            <input type="text" v-model="tarefa"name="tarefa" class="form-control mr-2" placeholder="Tarefa">
-            <button type="submit" v-on:click="OK" class="btn btn-primary">OK</button>
+            <input type="text" name="tarefa" v-model="tarefa" class="form-control mr-2" placeholder="Tarefa">
+            <button type="submit" v-on:click="ok" class="btn btn-primary">OK</button>
           </form>
         </div>
       </div>
@@ -33,8 +33,10 @@
         <div class="col-12">
           <h1>Lista de tarefas</h1>
           <ul class="list-group">
-            <li class="list-group-item concluido">teste<span class="float-right"><input class="form-check-input" type="checkbox"> </span>
-
+            <li class="list-group-item" v-for="item in itens">
+              <span class="float-right"> <input class="form-check-input" type="checkbox" v-on:click= "risca" > </span>
+              {{ item }}
+            </li>
           </ul>          
         </div>        
       </div>

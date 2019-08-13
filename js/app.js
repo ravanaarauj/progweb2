@@ -23,9 +23,17 @@
 }) */
 
 var app = new Vue({
-	el: '@lista' ,
+	el: '#lista' ,
 	data:{
+		tarefa: '',
 		itens:[
-		]
+		],
+	},
+	methods: {
+		ok: function() {
+			app.itens.push(app.tarefa)
+		},
+		risca: function() {
+		}
 	}
 })
